@@ -6,7 +6,9 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "moment": "^2.11.0",
     "react-native": "^0.17.0",
-    "react-native-cli": "^0.1.7"
+    "react-native-cli": "^0.1.7",
+    "react-native-icons": "^0.7.0"
   }
 }
