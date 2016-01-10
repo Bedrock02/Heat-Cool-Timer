@@ -112,6 +112,7 @@ module.exports = React.createClass({
 	},
 
 	onBackPressed: function() {
+		this.onPausePressed();
 		this.props.navigator.pop();
 	},
 
@@ -147,11 +148,18 @@ module.exports = React.createClass({
 		}
 
 		if (newTime.minutes() === 0 && newTime.seconds() === 0) {
-			nextSession = this.isHeat() ? "Cool" : "Heat";
-			this.resetSessionTimers();
-			this.setState({session: nextSession});
+			this.nextSession();
 		}
 
+	},
+
+	nextSession: function() {
+		nextSession = this.isHeat() ? "Cool" : "Heat";
+		this.resetSessionTimers();
+		this.setState({session: nextSession});
+		if (this.getSessionTime() === "0:00") {
+			this.nextSession();
+		}
 	},
 
 	resetSessionTimers: function() {
