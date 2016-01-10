@@ -106,8 +106,14 @@ module.exports = React.createClass({
     // Need to make sure that we are not getting negative values
     if (attribute === 'heat') {
       newState.heat = this.state.heat - 1;
+      if (newState.heat === 0 && this.state.cool == 0) {
+        return;
+      }
     } else if (attribute === 'cool') {
       newState.cool = this.state.cool - 1;
+      if (newState.cool === 0 && this.state.heat == 0) {
+        return;
+      }
     } else if (attribute === 'total') {
       newState.total = this.state.total - 1;
     } else {
