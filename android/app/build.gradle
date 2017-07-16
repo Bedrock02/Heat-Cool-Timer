@@ -56,11 +56,11 @@ android {
         applicationId "com.coldheattimer"
         minSdkVersion 16
         targetSdkVersion 22
-        versionName '1.0.2'
+        versionName '1.0.4'
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
-        versionCode 3
+        versionCode 4
     }
     buildTypes {
         release {
